@@ -19,6 +19,7 @@ router.post("/login/", async(req, res)=>{
 
         admin = await Admin.findById(admin[0]._id);
         admin.authkey = authkey;
+        admin.save();
         data = {
             "data":
             {
